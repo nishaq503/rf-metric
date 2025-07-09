@@ -1,5 +1,7 @@
 """The root of the package."""
 
+from . import data, utils
+
 
 def add(a: int, b: int) -> int:
     """Add two integers."""
@@ -8,8 +10,14 @@ def add(a: int, b: int) -> int:
 
 def main() -> None:
     print("Hello from rf-metric!")
-    print(f"1 + 2 = {add(1, 2)}")
+    print("Configuration:")
+    for var, val in utils.config.items():
+        print(f"  {var}: {val}")
 
-    a = int(input("Enter first number: "))
-    b = int(input("Enter second number: "))
-    print(f"The sum of {a} and {b} is {add(a, b)}.")
+
+__all__ = [
+    "data",
+    "utils",
+    "add",
+    "main",
+]
