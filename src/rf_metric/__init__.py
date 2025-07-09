@@ -1,5 +1,6 @@
 """The root of the package."""
 
+
 def add(a: int, b: int) -> int:
     """Add two integers."""
     return a + b
