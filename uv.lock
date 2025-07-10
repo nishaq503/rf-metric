@@ -420,6 +420,15 @@ wheels = [
 ]
 
 [[package]]
+name = "h5py-stubs"
+version = "0.2.0"
+source = { git = "https://github.com/nishaq503/h5py-stubs#8f7a11173b1cd22dde033bc5ef40701783e751b1" }
+dependencies = [
+    { name = "h5py" },
+    { name = "numpy" },
+]
+
+[[package]]
 name = "httpcore"
 version = "1.0.9"
 source = { registry = "https://pypi.org/simple" }
@@ -1456,6 +1465,7 @@ dependencies = [
 
 [package.dev-dependencies]
 dev = [
+    { name = "h5py-stubs" },
     { name = "isort" },
     { name = "jupyterlab" },
     { name = "matplotlib" },
@@ -1476,6 +1486,7 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [
+    { name = "h5py-stubs", git = "https://github.com/nishaq503/h5py-stubs" },
     { name = "isort", specifier = ">=6.0.1" },
     { name = "jupyterlab", specifier = ">=4.4.4" },
     { name = "matplotlib", specifier = ">=3.10.3" },

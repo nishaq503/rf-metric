@@ -22,6 +22,7 @@ build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = [
+    "h5py-stubs",
     "isort>=6.0.1",
     "jupyterlab>=4.4.4",
     "matplotlib>=3.10.3",
@@ -32,3 +33,6 @@ dev = [
     "pytest-sugar>=1.0.0",
     "ruff>=0.12.2",
 ]
+
+[tool.uv.sources]
+h5py-stubs = { git = "https://github.com/nishaq503/h5py-stubs" }

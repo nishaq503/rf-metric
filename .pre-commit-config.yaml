@@ -57,6 +57,7 @@ repos:
           - pytest
           - numpy
           - dotenv
+          - h5py_stubs
 
   - repo: https://github.com/pycqa/isort
     rev: 5.13.2
