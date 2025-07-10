@@ -104,17 +104,17 @@ class ModulationMode(str, enum.Enum):
         if not file_path.exists():
             raise FileNotFoundError(f"Dataset file {file_path} does not exist.")
 
-        print(f"Reading dataset from {file_path}")
         with h5py.File(file_path, "r") as file:  # type: ignore[call-arg,arg-type]
-            print(f"Opened dataset file {file_path}")
-            print(f"Available keys: {list(file.keys())}")
+            # Available keys in the file:
+            # - "X": The main dataset containing the samples.
+            # - "Y": TODO: Ask Terry
+            # - "Z": TODO: Ask Terry
             data_x = numpy.asarray(file["X"])
             # data_y = file["Y"]
             # data_z = file["Z"]
 
         if noise_level is None:
             datasets: dict[NoiseLevel, numpy.typing.ArrayLike] = {}
-            print("Reading all noise levels...")
             for i, nl in enumerate(NoiseLevel.all_levels()):
                 start = i * 4096  # There are 4096 samples per noise level
                 stop = start + 4096
@@ -122,7 +122,6 @@ class ModulationMode(str, enum.Enum):
             return datasets
 
         else:
-            print(f"Reading dataset for noise level {noise_level}...")
             i = list(NoiseLevel.all_levels()).index(noise_level)
             start = i * 4096  # There are 4096 samples per noise level
             stop = start + 4096

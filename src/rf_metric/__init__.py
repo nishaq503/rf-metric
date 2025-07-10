@@ -5,11 +5,6 @@ import numpy
 from . import data, utils
 
 
-def add(a: int, b: int) -> int:
-    """Add two integers."""
-    return a + b
-
-
 def main() -> None:
     print("Hello from rf-metric!")
     print("Configuration:")
@@ -31,6 +26,5 @@ def main() -> None:
 __all__ = [
     "data",
     "utils",
-    "add",
     "main",
 ]
